@@ -7,7 +7,7 @@ pub mod errors;
 pub mod instructions;
 pub mod states;
 
-declare_id!("TheTH6YXTse8ANedTw17cjJaV23HgAf84a9NKpvmLe8");
+declare_id!("FrFGfdqsY6pcKianF4rFFQXbmVJXFwrCGDJstfgondJz");
 
 #[program]
 pub mod hermodoor {
