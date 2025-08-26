@@ -1,0 +1,482 @@
+{
+  "address": "FrFGfdqsY6pcKianF4rFFQXbmVJXFwrCGDJstfgondJz",
+  "metadata": {
+    "name": "hermodoor",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "close_door",
+      "discriminator": [
+        113,
+        93,
+        153,
+        94,
+        138,
+        63,
+        103,
+        41
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "signer": true
+        },
+        {
+          "name": "cycle"
+        },
+        {
+          "name": "participant",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  80,
+                  65,
+                  82,
+                  84,
+                  73,
+                  67,
+                  73,
+                  80,
+                  65,
+                  78,
+                  84,
+                  95,
+                  83,
+                  69,
+                  69,
+                  68
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "cycle"
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "join_cycle",
+      "discriminator": [
+        49,
+        71,
+        250,
+        52,
+        222,
+        37,
+        47,
+        157
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "cycle"
+        },
+        {
+          "name": "participant",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  80,
+                  65,
+                  82,
+                  84,
+                  73,
+                  67,
+                  73,
+                  80,
+                  65,
+                  78,
+                  84,
+                  95,
+                  83,
+                  69,
+                  69,
+                  68
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "cycle"
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "nickname",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "next_cycle",
+      "discriminator": [
+        65,
+        175,
+        174,
+        124,
+        69,
+        233,
+        84,
+        200
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "registry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  82,
+                  69,
+                  71,
+                  73,
+                  83,
+                  84,
+                  82,
+                  89,
+                  95,
+                  83,
+                  69,
+                  69,
+                  68
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "cycle",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  67,
+                  89,
+                  67,
+                  76,
+                  69,
+                  95,
+                  83,
+                  69,
+                  69,
+                  68
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              },
+              {
+                "kind": "account",
+                "path": "registry.next_round",
+                "account": "Registry"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "start_game",
+      "discriminator": [
+        249,
+        47,
+        252,
+        172,
+        184,
+        162,
+        245,
+        14
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "registry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  82,
+                  69,
+                  71,
+                  73,
+                  83,
+                  84,
+                  82,
+                  89,
+                  95,
+                  83,
+                  69,
+                  69,
+                  68
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Cycle",
+      "discriminator": [
+        189,
+        110,
+        197,
+        59,
+        103,
+        0,
+        241,
+        115
+      ]
+    },
+    {
+      "name": "Participant",
+      "discriminator": [
+        32,
+        142,
+        108,
+        79,
+        247,
+        179,
+        54,
+        6
+      ]
+    },
+    {
+      "name": "Registry",
+      "discriminator": [
+        47,
+        174,
+        110,
+        246,
+        184,
+        182,
+        252,
+        218
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized: only the registry authority may perform this action"
+    },
+    {
+      "code": 6001,
+      "name": "RoundLimitExceeded",
+      "msg": "Round limit exceeded: the facility cannot support more cycles"
+    },
+    {
+      "code": 6002,
+      "name": "BadTime",
+      "msg": "The provided event timings are inconsistent or invalid"
+    },
+    {
+      "code": 6003,
+      "name": "NicknameTooLong",
+      "msg": "Nickname too long"
+    },
+    {
+      "code": 6004,
+      "name": "RegistrationClosed",
+      "msg": "Registration is closed"
+    },
+    {
+      "code": 6005,
+      "name": "AlreadyClosed",
+      "msg": "You already closed the hermodoor for this cycle"
+    }
+  ],
+  "types": [
+    {
+      "name": "Cycle",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "round",
+            "type": "u64"
+          },
+          {
+            "name": "quiet_start",
+            "type": "i64"
+          },
+          {
+            "name": "alarm_start",
+            "type": "i64"
+          },
+          {
+            "name": "cooldown_start",
+            "type": "i64"
+          },
+          {
+            "name": "cooldown_end",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PartStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Dismissed"
+          },
+          {
+            "name": "Saved"
+          },
+          {
+            "name": "Late"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Participant",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "cycle",
+            "type": "pubkey"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PartStatus"
+              }
+            }
+          },
+          {
+            "name": "nickname",
+            "type": "string"
+          },
+          {
+            "name": "close_time",
+            "type": "i64"
+          },
+          {
+            "name": "points",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Registry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "t0",
+            "type": "i64"
+          },
+          {
+            "name": "next_round",
+            "type": "u64"
+          },
+          {
+            "name": "max_rounds",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}
