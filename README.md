@@ -73,7 +73,6 @@ PDAs guarantee unique, deterministic addresses without private keys and let the 
 - close_door(finalize_participation): Finalizes a Participant (must be Pending). If now < alarm_start → Dismissed (0 pts). If alarm_start ≤ now < cooldown_start → Saved with points = (now - alarm_start) (optionally capped by the alarm window). Else → Late (0 pts). Guard: prevent double close (AlreadyClosed).
 
 ### Account Structure
-[TODO: Describe your main account structures and their purposes]
 
 ```rust
 // Global registry for the admin/authority.
